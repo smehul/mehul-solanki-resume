@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mehul Solanki | Senior Drupal Backend Developer</title>
+  <meta name="description" content="Portfolio of Mehul Solanki - Senior Drupal Backend Developer with 8+ years of enterprise experience." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --bg: #0b0f19;
+      --card-bg: #111827;
+      --card-border: #1f2937;
+      --text: #f3f4f6;
+      --text-muted: #9ca3af;
+      --accent: #38bdf8;
+      --drupal-blue: #0678be;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    nav {
+      border-bottom: 1px solid var(--card-border);
+      background: rgba(11, 15, 25, 0.9);
+      backdrop-filter: blur(10px);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 64px;
+    }
+
+    .nav-brand {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #fff;
+      text-decoration: none;
+      letter-spacing: -0.02em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+    }
+
+    .nav-links a {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      text-decoration: none;
+    }
+
+    .nav-links a:hover {
+      color: var(--accent);
+    }
+
+    header {
+      padding: 60px 0 40px;
+      border-bottom: 1px solid var(--card-border);
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 4px 12px;
+      border-radius: 9999px;
+      background: rgba(56, 189, 248, 0.1);
+      color: var(--accent);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.85rem;
+      margin-bottom: 14px;
+      border: 1px solid rgba(56, 189, 248, 0.3);
+    }
+
+    h1 {
+      font-size: 2.8rem;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      margin-bottom: 6px;
+    }
+
+    .subtitle {
+      font-size: 1.2rem;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .location {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      margin-bottom: 20px;
+    }
+
+    .summary {
+      font-size: 1.05rem;
+      max-width: 880px;
+      color: #d1d5db;
+      margin-bottom: 24px;
+    }
+
+    .contact-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 10px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      color: var(--text);
+      padding: 10px 18px;
+      border-radius: 8px;
+      font-size: 0.92rem;
+      font-weight: 500;
+      text-decoration: none;
+      transition: background 0.2s, border-color 0.2s;
+    }
+
+    .btn:hover {
+      background: #1f2937;
+      border-color: var(--accent);
+      text-decoration: none;
+    }
+
+    .btn-primary {
+      background: var(--drupal-blue);
+      border-color: var(--drupal-blue);
+      color: #fff;
+    }
+
+    .btn-primary:hover {
+      background: #0566a3;
+      border-color: #0566a3;
+    }
+
+    section {
+      padding: 60px 0;
+      border-bottom: 1px solid var(--card-border);
+    }
+
+    .section-title {
+      font-size: 1.6rem;
+      font-weight: 700;
+      margin-bottom: 30px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .section-title span {
+      color: var(--accent);
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 20px;
+    }
+
+    .skill-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      padding: 22px;
+      border-radius: 12px;
+    }
+
+    .skill-card h3 {
+      font-size: 1.05rem;
+      margin-bottom: 12px;
+      color: var(--accent);
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .tag {
+      background: #1e293b;
+      color: #e2e8f0;
+      padding: 5px 10px;
+      border-radius: 6px;
+      font-size: 0.82rem;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+      gap: 24px;
+    }
+
+    .project-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.2s, border-color 0.2s;
+    }
+
+    .project-card:hover {
+      transform: translateY(-3px);
+      border-color: var(--accent);
+    }
+
+    .project-head h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .platform-badge {
+      font-size: 0.8rem;
+      color: var(--accent);
+      font-family: 'JetBrains Mono', monospace;
+      margin-bottom: 12px;
+      display: inline-block;
+    }
+
+    .project-desc {
+      color: #d1d5db;
+      font-size: 0.93rem;
+      margin-bottom: 16px;
+      flex-grow: 1;
+    }
+
+    .project-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .project-link {
+      font-size: 0.88rem;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .timeline-item {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 24px;
+    }
+
+    .timeline-header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 6px;
+    }
+
+    .role {
+      font-size: 1.15rem;
+      font-weight: 700;
+    }
+
+    .company {
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    .location-text {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+    }
+
+    .dates {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .bullets {
+      list-style-type: none;
+    }
+
+    .bullets li {
+      position: relative;
+      padding-left: 20px;
+      margin-bottom: 8px;
+      color: #d1d5db;
+      font-size: 0.93rem;
+    }
+
+    .bullets li::before {
+      content: "▹";
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+    }
+
+    .edu-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .edu-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      padding: 20px;
+      border-radius: 10px;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .edu-card h3 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: #fff;
+    }
+
+    .edu-card p {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      margin-top: 4px;
+    }
+
+    .edu-date {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.85rem;
+      color: var(--accent);
+    }
+
+    footer {
+      padding: 40px 0;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="container nav-inner">
+      <a href="#" class="nav-brand">Mehul Solanki</a>
+      <div class="nav-links">
+        <a href="#expertise">Expertise</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#education">Education</a>
+      </div>
+    </div>
+  </nav>
+
+  <header>
+    <div class="container">
+      <span class="badge">Drupal Enterprise Architecture • 8+ Years Experience</span>
+      <h1>Mehul Solanki</h1>
+      <div class="subtitle">Senior Drupal Backend Developer</div>
+      <div class="location">Surat, Gujarat, India</div>
+      
+      <p class="summary">
+        Accomplished Senior Drupal Backend Developer with over 8 years of experience engineering high-performance, customizable, and secure enterprise web solutions. Specialized across Drupal 7, 8, 9, and 10 platforms, Acquia Site Studio, decoupled/headless architecture, RESTful API design, and complex third-party system integrations (Salesforce, SAP, Janrain, Zoom). Proven track record of optimizing web performance, architecting robust caching layers, and delivering scalable digital products in collaboration with global cross-functional teams.
+      </p>
+
+      <div class="contact-links">
+        <a href="mailto:smehul97235@outlook.com" class="btn btn-primary">✉ smehul97235@outlook.com</a>
+        <a href="tel:+919723534703" class="btn">📞 +91-9723534703</a>
+        <a href="https://www.linkedin.com/in/mehul-solanki-007a42146" target="_blank" rel="noopener noreferrer" class="btn">🔗 LinkedIn Profile</a>
+      </div>
+    </div>
+  </header>
+
+  <section id="expertise">
+    <div class="container">
+      <h2 class="section-title"><span>01.</span> Technical Expertise</h2>
+      <div class="skills-grid">
+        
+        <div class="skill-card">
+          <h3>CMS & Architecture</h3>
+          <div class="tags">
+            <span class="tag">Drupal (7, 8, 9, 10 - Backend)</span>
+            <span class="tag">Headless/Decoupled Drupal</span>
+            <span class="tag">Custom Module Development</span>
+            <span class="tag">Layout Builder</span>
+            <span class="tag">UI Patterns</span>
+            <span class="tag">WordPress</span>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <h3>Languages & Scripting</h3>
+          <div class="tags">
+            <span class="tag">PHP</span>
+            <span class="tag">SQL</span>
+            <span class="tag">jQuery</span>
+            <span class="tag">HTML5</span>
+            <span class="tag">CSS3</span>
+            <span class="tag">C</span>
+            <span class="tag">C++</span>
+            <span class="tag">.NET</span>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <h3>Acquia Ecosystem</h3>
+          <div class="tags">
+            <span class="tag">Acquia Cloud Setup</span>
+            <span class="tag">Acquia Site Factory (Multi-site)</span>
+            <span class="tag">Acquia Site Studio Components</span>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <h3>DevOps & Tooling</h3>
+          <div class="tags">
+            <span class="tag">Git</span>
+            <span class="tag">Composer</span>
+            <span class="tag">Docker</span>
+            <span class="tag">Lando</span>
+            <span class="tag">DDEV</span>
+            <span class="tag">Jira</span>
+            <span class="tag">BitBucket</span>
+            <span class="tag">Linux (Ubuntu)</span>
+            <span class="tag">macOS</span>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <h3>Enterprise Integrations</h3>
+          <div class="tags">
+            <span class="tag">Salesforce CRM</span>
+            <span class="tag">SAP</span>
+            <span class="tag">Janrain</span>
+            <span class="tag">DocCheck</span>
+            <span class="tag">Swiss</span>
+            <span class="tag">Google APIs</span>
+            <span class="tag">YouTube Data API</span>
+            <span class="tag">Zoom API</span>
+            <span class="tag">Social Media APIs</span>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <h3>Payment Gateways</h3>
+          <div class="tags">
+            <span class="tag">Ngenius payment</span>
+            <span class="tag">Stripe</span>
+            <span class="tag">PayPal</span>
+            <span class="tag">QuickBook</span>
+            <span class="tag">Qualpay</span>
+            <span class="tag">GlobalOnePay</span>
+            <span class="tag">Google Pay</span>
+            <span class="tag">Zoho</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <div class="container">
+      <h2 class="section-title"><span>02.</span> Professional Experience</h2>
+      <div class="timeline">
+
+        <div class="timeline-item">
+          <div class="timeline-header">
+            <div>
+              <span class="role">Senior Drupal Backend Developer</span> | <span class="company">Mobiiworld</span>
+            </div>
+            <span class="dates">June 2023 – Present</span>
+          </div>
+          <div class="location-text">Remote</div>
+          <ul class="bullets">
+            <li>Engineered Acquia Site Studio component-based architecture for enterprise-level web projects, drastically improving content editor agility and design consistency.</li>
+            <li>Designed, built, and consumed secure RESTful APIs to facilitate seamless, real-time data synchronization between Drupal platforms and external microservices.</li>
+            <li>Enhanced system reliability, application uptime, and diagnostic capabilities by establishing advanced error handling frameworks and centralized logging mechanisms.</li>
+            <li>Enforced strict web security compliance across all active applications following OWASP standards and enterprise security best practices.</li>
+          </ul>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-header">
+            <div>
+              <span class="role">Senior Drupal Backend Developer</span> | <span class="company">QED42</span>
+            </div>
+            <span class="dates">October 2022 – June 2023</span>
+          </div>
+          <div class="location-text">Remote</div>
+          <ul class="bullets">
+            <li>Partnered with multi-disciplinary global teams to architect, modernize, and integrate custom Drupal platforms into existing client software ecosystems.</li>
+            <li>Developed responsive, accessible, mobile-first web interfaces using Bootstrap, ensuring seamless cross-browser and cross-device performance.</li>
+            <li>Managed release hygiene, multi-developer branching strategies, and continuous integration workflows using Git to maintain code integrity.</li>
+          </ul>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-header">
+            <div>
+              <span class="role">Drupal Developer</span> | <span class="company">Cyber Infrastructure (CMMI Level 3 Certified)</span>
+            </div>
+            <span class="dates">December 2018 – October 2022</span>
+          </div>
+          <div class="location-text">Indore, MP, India</div>
+          <ul class="bullets">
+            <li>Accelerated page render speeds and overall system performance by crafting custom caching strategies and executing targeted database query optimizations.</li>
+            <li>Led technical peer code reviews, defining coding standards, quality gates, and maintainability guidelines for the engineering department.</li>
+            <li>Implemented strict role-based access controls (RBAC), robust input validation layers, and proactive security measures against common vulnerabilities.</li>
+          </ul>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-header">
+            <div>
+              <span class="role">Junior Drupal Developer</span> | <span class="company">AddWeb Solution Private Limited</span>
+            </div>
+            <span class="dates">January 2017 – December 2018</span>
+          </div>
+          <div class="location-text">Ahmedabad, Gujarat, India</div>
+          <ul class="bullets">
+            <li>Developed and tailored custom core and contributed Drupal modules, hooks, and sub-themes to satisfy unique client requirements.</li>
+            <li>Integrated major commercial payment gateways and built supporting back-end utilities for web and mobile interfaces.</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="container">
+      <h2 class="section-title"><span>03.</span> Featured Projects</h2>
+      <div class="projects-grid">
+
+        <div class="project-card">
+          <div class="project-head">
+            <h3>The Roxy Cinemas</h3>
+            <span class="platform-badge">Drupal 10 / Acquia Cloud</span>
+            <p class="project-desc">Built on Acquia CMS using Site Studio. Developed custom entities, dynamic listing engines. Integrated Auth0 SSO with custom page template and salesforce integration. Integrated Vista API to manage ticket booking features.</p>
+          </div>
+          <div class="project-links">
+            <a class="project-link" href="https://theroxycinemas.com" target="_blank" rel="noopener noreferrer">theroxycinemas.com ↗</a>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-head">
+            <h3>Dubai Parks and Resorts (DPR)</h3>
+            <span class="platform-badge">Drupal 10 / Acquia Cloud</span>
+            <p class="project-desc">Built on Acquia CMS using Site Studio. Developed custom entities, dynamic listing engines, interactive sliders, and tailored template views for high-traffic media displays.</p>
+          </div>
+          <div class="project-links">
+            <a class="project-link" href="https://dubaiparksandresorts.com" target="_blank" rel="noopener noreferrer">dubaiparksandresorts.com ↗</a>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-head">
+            <h3>The Green Planet (TGP)</h3>
+            <span class="platform-badge">Drupal 10 / Acquia Cloud</span>
+            <p class="project-desc">Architected greenfield platform on Acquia Cloud. Integrated VGS product API alongside custom-built Site Studio components for modular layout management.</p>
+          </div>
+          <div class="project-links">
+            <a class="project-link" href="https://thegreenplanetdubai.com" target="_blank" rel="noopener noreferrer">thegreenplanetdubai.com ↗</a>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-head">
+            <h3>TubeSpanner</h3>
+            <span class="platform-badge">Drupal 9</span>
+            <p class="project-desc">Integrated YouTube Developer APIs for automated thumbnail generation and video metrics reporting. Implemented multi-platform social sharing and analytics fetching (Facebook, X/Twitter, LinkedIn).</p>
+          </div>
+          <div class="project-links">
+            <a class="project-link" href="https://tubespanner.com" target="_blank" rel="noopener noreferrer">tubespanner.com ↗</a>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-head">
+            <h3>Sanofi Enterprise Portals</h3>
+            <span class="platform-badge">Drupal 8/9</span>
+            <p class="project-desc">Implemented Layout Builder for flexible medical content publishing. Integrated Janrain API to enforce stringent, geo-restricted identity access controls.</p>
+          </div>
+          <div class="project-links">
+            <a class="project-link" href="https://libtayo.com" target="_blank" rel="noopener noreferrer">libtayo.com ↗</a>
+            <span style="color: var(--text-muted);">•</span>
+            <a class="project-link" href="https://cablivi.com" target="_blank" rel="noopener noreferrer">cablivi.com ↗</a>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-head">
+            <h3>Tetco Platform</h3>
+            <span class="platform-badge">Drupal 10</span>
+            <p class="project-desc">Built custom user registration workflows synced via SAP API. Developed automated enterprise lead-capture webforms directly wired into Salesforce CRM.</p>
+          </div>
+          <div class="project-links">
+            <a class="project-link" href="https://tetco.sa" target="_blank" rel="noopener noreferrer">tetco.sa ↗</a>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-head">
+            <h3>Deloitte Academy</h3>
+            <span class="platform-badge">Drupal 9</span>
+            <p class="project-desc">Integrated Zoom API for real-time online event registration, participant tracking, and dynamic pricing/quotation engines.</p>
+          </div>
+          <div class="project-links">
+            <a class="project-link" href="https://deloitte.com" target="_blank" rel="noopener noreferrer">deloitte.com ↗</a>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-head">
+            <h3>Het Winkel</h3>
+            <span class="platform-badge">Drupal 7</span>
+            <p class="project-desc">Developed custom booking engine APIs, incorporated Stripe payment processing, and engineered interactive coordinate rendering via Leaflet maps.</p>
+          </div>
+          <div class="project-links">
+            <a class="project-link" href="https://hetwinkel.nl" target="_blank" rel="noopener noreferrer">hetwinkel.nl ↗</a>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-head">
+            <h3>Combe / Just For Men</h3>
+            <span class="platform-badge">Drupal 9</span>
+            <p class="project-desc">Created dynamic front-end layout elements using Acquia Site Studio and built an interactive client-side FAQ search system leveraging jQuery.</p>
+          </div>
+          <div class="project-links">
+            <a class="project-link" href="https://justformen.com" target="_blank" rel="noopener noreferrer">justformen.com ↗</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="education">
+    <div class="container">
+      <h2 class="section-title"><span>04.</span> Education</h2>
+      <div class="edu-list">
+        
+        <div class="edu-card">
+          <div>
+            <h3>Bachelor of Computer Applications (BCA) in Computer Science</h3>
+            <p>Hemchandracharya North Gujarat University (HNGU), Visnagar, India</p>
+          </div>
+          <div class="edu-date">Graduated: June 2016</div>
+        </div>
+
+        <div class="edu-card">
+          <div>
+            <h3>Higher Secondary Certificate (HSC) in Science</h3>
+            <p>Dakshinamurti School, Surat, India</p>
+          </div>
+          <div class="edu-date">Completed: June 2011</div>
+        </div>
+
+        <div class="edu-card">
+          <div>
+            <h3>Secondary School Certificate (SSC)</h3>
+            <p>Mansarovar High School, Surat, India</p>
+          </div>
+          <div class="edu-date">Completed: June 2009</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>© Mehul Solanki • Senior Drupal Backend Developer</p>
+      <p style="margin-top: 6px; font-size: 0.8rem;">Surat, Gujarat, India • +91-9723534703 • smehul97235@outlook.com</p>
+    </div>
+  </footer>
+
+</body>
+</html>
